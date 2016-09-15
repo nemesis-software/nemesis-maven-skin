@@ -15,7 +15,7 @@
 
     <groupId>com.nemesis.tools</groupId>
     <artifactId>nemesis-maven-skin</artifactId>
-    <version>1.2.0.RELEASE</version>
+    <version>1.3.0.BUILD-SNAPSHOT</version>
 
     <name>Nemesis Maven Skin</name>
     <url>http://docs.nemesis.bg/tools/nemesis-maven-skin</url>
