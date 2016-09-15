@@ -28,10 +28,6 @@
     </scm>
 
     <distributionManagement>
-        <site>
-            <id>nemesis-docs</id>
-            <url>scp://178.62.150.204/var/www/html/docs/${project.version}/</url>
-        </site>
         <repository>
             <id>nemesis-repository</id>
             <uniqueVersion>true</uniqueVersion>
