@@ -1,0 +1,11 @@
+= Nemesis Maven Skin
+Petar Tahchiev;
+:doctype: book
+:sectanchors:
+:sectlinks:
+:toclevels: 4
+:source-highlighter: coderay
+:icons: font
+:last-update-label!:
+
+The nemesis maven skin specifies the look-and-feel of the generated maven website (the nemesis documentation).

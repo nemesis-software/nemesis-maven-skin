@@ -1,0 +1,25 @@
+body {
+    background: #f1f1f1;
+}
+
+h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 {
+    color: #008ECA;
+    font-family: "Varela Round";
+}
+
+a, a:hover, a:focus {
+    color: #008ECA;
+}
+
+div#preamble {
+    padding-top: 30px;
+}
+
+.column, .columns {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+p.tableblock a {
+    display: block;
+}
