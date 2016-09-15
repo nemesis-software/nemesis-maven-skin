@@ -45,6 +45,8 @@
             <url>https://repository.nemesis.io/artifactory/libs-snapshot-local</url>
         </snapshotRepository>
     </distributionManagement>
+    <build>
+    <plugins>
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
@@ -53,4 +55,6 @@
             <goals></goals>
         </configuration>
     </plugin>
+    </plugins>
+    </build>
 </project>
