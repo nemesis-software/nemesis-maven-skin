@@ -23,3 +23,8 @@ div#preamble {
 p.tableblock a {
     display: block;
 }
+
+#toc {
+    width: 350px;
+    float: right;
+}
