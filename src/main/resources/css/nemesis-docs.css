@@ -24,7 +24,11 @@ p.tableblock a {
     display: block;
 }
 
-#toc {
+div#toc {
     width: 350px;
     float: right;
+}
+
+.videoblock {
+	text-align:center;
 }
