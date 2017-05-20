@@ -515,7 +515,7 @@
     <meta name="generator" content="Asciidoctor 1.5.2"/>
     <meta name="author" content="Nemesis Software Ltd."/>
     <link rel="shortcut icon" type="image/x-icon" href="//docs.nemesis.io/current/tools/img/favicon.ico"/>
-    <link href="https://www.solarapparel.com/resources/theme/samplestore-cms/normal/css/basic.css" rel="stylesheet" type="text/css"/>
+    <link href="https://docs.nemesis.io/current-snapshot/tools/css/basic.css" rel="stylesheet" type="text/css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
     <link href="https://docs.nemesis.io/current/tools/css/asciidoctor-default.css" rel="stylesheet" type="text/css"/>
