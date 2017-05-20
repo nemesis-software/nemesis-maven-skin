@@ -15,7 +15,7 @@
 
     <groupId>com.nemesis.tools</groupId>
     <artifactId>nemesis-maven-skin</artifactId>
-    <version>1.4.2.BUILD-SNAPSHOT</version>
+    <version>1.4.2.RELEASE</version>
 
     <name>Nemesis Maven Skin</name>
     <url>http://docs.nemesis.bg/tools/nemesis-maven-skin</url>
@@ -24,7 +24,7 @@
         <connection>scm:git:git@github.com:nemesis-software/nemesis-maven-skin.git</connection>
         <developerConnection>scm:git:git@github.com:nemesis-software/nemesis-maven-skin.git</developerConnection>
         <url>https://github.com/nemesis-software/nemesis-maven-skin.git</url>
-        <tag>1.2.0.RELEASE</tag>
+        <tag>1.4.2.RELEASE</tag>
     </scm>
 
     <distributionManagement>
