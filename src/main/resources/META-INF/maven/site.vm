@@ -153,26 +153,26 @@
 #end
 ##
 #macro ( menuItem $item )
-    #set ( $collapse = "none" )
+    #set ( $collapse = "" )
     #set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
     #set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
 ##
     #if ( $item && $item.items && $item.items.size() > 0 )
         #if ( $item.collapse == false )
-            #set ( $collapse = "expanded" )
+            #set ( $collapse = "open" )
         #else
         ## By default collapsed
-            #set ( $collapse = "collapsed" )
+            #set ( $collapse = "" )
         #end
     ##
         #set ( $display = false )
         #displayTree( $display $item )
     ##
         #if ( $alignedFileName == $currentItemHref || $display )
-            #set ( $collapse = "expanded" )
+            #set ( $collapse = "open" )
         #end
     #end
-<li class="$collapse">
+<li class="$collapse $currentItemHref $item.collapse ">
     #if ( $item.img )
         #if ( $item.position == "left" )
             #if ( $alignedFileName == $currentItemHref )
@@ -198,8 +198,8 @@
         #if ( $collapse == "expanded" )
             <ul>
                 #foreach( $subitem in $item.items )
-          #menuItem( $subitem )
-        #end
+                    #menuItem( $subitem )
+                #end
             </ul>
         #end
     #end
@@ -257,20 +257,20 @@
                 #set ( $img = "<img class='imageLink'" + $src + $alt + $border + $width + $height + $title + "/>" )
             ##
                 #if ( $position == "left" )
-                <a href="#">$img $menu.name</a>
+                    <a href="#">$img $menu.name</a>
                 #else
-                <a href="#">$menu.name $img</a>
+                    <a href="#">$menu.name $img</a>
                 #end
             #else
-                <li class="dropdown">
-                    <a href="#" data-target="#collapse-$velocityCount" data-toggle="collapse" aria-expanded="false" class="collapsed">$menu.name</a>
-                #if ( $menu.items && $menu.items.size() > 0 )
-                    <ul class="collapse" id="collapse-$velocityCount" aria-expanded="false" style="height: 0px;">
-                        #foreach( $item in $menu.items )
-                            #menuItem( $item )
-                        #end
-                    </ul>
-                #end
+                <li class="dropdown open">
+                    <a href="#" data-target="#collapse-$velocityCount" data-toggle="collapse" aria-expanded="false">$menu.name</a>
+                    #if ( $menu.items && $menu.items.size() > 0 )
+                        <ul class="collapse" id="collapse-$velocityCount">
+                            #foreach( $item in $menu.items )
+                                #menuItem( $item )
+                            #end
+                        </ul>
+                    #end
                 </li>
             #end
         #end
@@ -520,6 +520,7 @@
     <link href="./css/coderay-asciidoctor.css" rel="stylesheet" type="text/css"/>
     <link href="./css/asciidoctor-default.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
 	<link rel="shortcut icon" href="./img/favicon.ico" />
 
     #foreach( $author in $authors )
@@ -550,7 +551,7 @@
     $headContent
     #googleAnalytics( $decoration.googleAnalyticsAccountId )
 </head>
-<body>
+<body class="open-sidenav">
 	<div class="viewport">
 		<header>
 			<div class="container-fluid">
