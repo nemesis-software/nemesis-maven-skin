@@ -309,6 +309,7 @@ header .nav-wrapper {
     left: 0;
 }
 .sidenav .nav {
+    width: 100%;
     position: absolute;
     overflow-y: auto;
     height: calc(100% - 175px);
