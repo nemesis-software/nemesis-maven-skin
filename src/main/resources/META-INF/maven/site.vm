@@ -576,7 +576,7 @@
 				<div class="nav-wrapper">
 					<nav class="main-nav pull-right">
 						<ul class="nav nav-pills">
-							<li class="hide-on-mobile"><a href="#">User Giudes</a></li>
+							<li class="hide-on-mobile"><a href="#">User Guides</a></li>
 							<li class="active hide-on-mobile"><a href="#">Developer Guides</a></li>
 							<li><a href="#" class="search-btn"></a></li>
 						</ul>
