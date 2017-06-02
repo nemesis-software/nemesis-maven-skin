@@ -297,7 +297,7 @@ header .nav-wrapper {
     min-height: 100%;
     width: 405px;
     left: -405px;
-    padding-top: 45px;
+    padding: 45px 0 0 0;
     background-color: #dce3e5;
     -webkit-transition: .25s all ease;
     -moz-transition: .25s all ease;
@@ -309,8 +309,9 @@ header .nav-wrapper {
     left: 0;
 }
 .sidenav .nav {
-    width: 100%;
     position: absolute;
+    width: 100%;
+    padding-bottom: 195px;
     overflow-y: auto;
     height: calc(100% - 175px);
 }
@@ -795,22 +796,3 @@ footer .social ul li a:hover {
         width: 100%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
