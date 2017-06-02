@@ -551,7 +551,14 @@
     $headContent
     #googleAnalytics( $decoration.googleAnalyticsAccountId )
 </head>
-<body class="open-sidenav">
+
+#if ( $decoration.body.menus && $decoration.body.menus.size() > 0 )
+    #set ( $sidenav = "open-sidenav" )
+#else
+    #set ( $sidenav = "" )
+#end
+
+<body class="$sidenav">
 	<div class="viewport">
 		<header>
 			<div class="container-fluid">
