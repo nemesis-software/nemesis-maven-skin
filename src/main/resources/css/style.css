@@ -738,6 +738,78 @@ footer .social ul li a:hover {
     text-decoration: underline;
 }
 
+.rest-tester {
+    clear: both;
+    float: left;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 1em;
+    border-radius: 4px;
+    margin: 30px 0;
+}
+.rest-tester .row {
+    width: auto;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+.rest-tester .row + .row {
+    margin-top: 20px;
+}
+.rest-tester h3 {
+    text-align: center;
+}
+.rest-tester .form-inline {
+    float: left;
+    width: 100%;
+}
+.rest-tester .form-inline label {
+    width: 60px;
+    float: left;
+    line-height: 34px;
+}
+.rest-tester .form-inline input {
+    float: left;
+    width: calc(100% - 60px);
+}
+.rest-tester .radio-inline,
+.rest-tester .radio-inline input {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 0;
+}
+.rest-tester .nav.nav-tabs a {
+    font: bold 16px/normal 'Roboto Slab', sans-serif;
+    text-decoration: none;
+    color: #555;
+}
+.rest-tester .nav.nav-tabs .active a {
+    color: #abbee0;
+    color: #47d6ff;
+    background-color: #eff6f9;
+}
+.rest-tester .tab-pane {
+    padding: 30px 0 0 0;
+}
+.rest-tester .response {
+    position: relative;
+}
+.rest-tester .response .remove {
+    display: none;
+    text-indent: -100000px;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url(../img/icon-x.png) center center no-repeat;
+    background-size: cover;
+
+}
+.rest-tester .response:hover .remove {
+    display: block;
+}
+
 @media (max-width: 1150px) {
     .container,
     header .container {
@@ -798,22 +870,3 @@ footer .social ul li a:hover {
         width: 100%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -503,6 +503,34 @@
     #end
 #end
 ##
+#macro( configurationProperties )
+    #if ($FileUtils.fileExists("$project.getBasedir()/target/classes/META-INF/additional-spring-configuration-metadata.json"))
+        #set($jo = $class.inspect("org.json.JSONObject").getType().getConstructor($class.inspect("java.lang.String").getType()).newInstance($FileUtils.fileRead("$project.getBasedir()/target/classes/META-INF/additional-spring-configuration-metadata.json")))
+        <table class="tableblock frame-all grid-all spread">
+            <colgroup>
+                <col style="width: 33%;">
+                <col style="width: 33%;">
+                <col style="width: 33%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tableblock halign-left valign-top">Name</th>
+                    <th class="tableblock halign-left valign-top">Type</th>
+                    <th class="tableblock halign-left valign-top">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            #foreach($prop in $jo.properties)
+                <tr>
+                    <td class="tableblock halign-left valign-top"><p class="tableblock">$prop.name</p></td>
+                    <td class="tableblock halign-left valign-top"><p class="tableblock">$prop.type</p></td>
+                    <td class="tableblock halign-left valign-top"><p class="tableblock">#if($prop.has("description"))$prop.description#end</p></td>
+                </tr>
+            #end
+            </tbody>
+        </table>
+    #end
+#end
 #macro( petar )
 	Petar
 #end
