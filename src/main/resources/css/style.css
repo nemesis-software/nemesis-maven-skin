@@ -624,7 +624,6 @@ footer .social ul li a:hover {
 .large-12.columns .sect1 span,
 .large-12.columns .sect1 td,
 .large-12.columns .sect1 b,
-.large-12.columns .sect1 code,
 .large-12.columns .sect1 div,
 .large-12.columns .sect1 a {
     font-family: 'Roboto', sans-serif !important;
@@ -660,7 +659,7 @@ footer .social ul li a:hover {
 }
 .large-12.columns .listingblock,
 .large-12.columns .imageblock {
-    margin: 80px 0;
+    margin: 30px 0;
 }
 .large-12.columns .listingblock .title,
 .large-12.columns .imageblock .title {
@@ -675,16 +674,6 @@ footer .social ul li a:hover {
 .large-12.columns code {
     max-width: 100%;
     word-break: break-all;
-}
-.large-12.columns .listingblock .content {
-    padding: 60px;
-    background-color: white;
-}
-.large-12.columns .listingblock pre {
-    padding: 0;
-    border-radius: 0;
-    border: none;
-    background: none;
 }
 .large-12.columns .listingblock pre code {
     width: 100%;
@@ -861,12 +850,28 @@ footer .social ul li a:hover {
         text-align: center;
         margin-top: 30px;
     }
-    .large-12.columns .listingblock .content {
-        padding: 30px;
-    }
 }
 @media (max-width: 405px) {
     .sidenav {
         width: 100%;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
