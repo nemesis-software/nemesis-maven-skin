@@ -859,7 +859,13 @@ footer .social ul li a:hover {
 
 
 
-
+.large-12.columns .ulist ul {
+    list-style: disc;
+    list-style-position: inside;
+}
+.large-12.columns .ulist ul > li > p {
+    display: inline;
+}
 
 
 
