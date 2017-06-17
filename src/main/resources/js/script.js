@@ -17,9 +17,8 @@ $(function(){
 		},
 		restTester: {
 			clientType: $('.rest-tester [name="client_type"]:checked').val(),
-			hostname: window.location.href.replace(/(^\w+:|^)\/\//, '').split('/')[0],
-			coreUrlTemplate: '/current-snapshot/platform/modules/nemesis-module-restservices/__entity__/__verb__-example/__client_type__-request.html',
-			facadeUrlTemplate: '/current-snapshot/platform/nemesis-platform-facade/__class__/__method__/__client_type__-request.html',
+			urlTemplate: '__api_object_type__/__class__/__method__/__client_type__-request.html',
+			authUrlTemplate: 'repository/authenticate/__client_type__-request.html',
 
 			/**
 			 * Initialize rest tester object
@@ -28,15 +27,8 @@ $(function(){
 			 * @author Vladimir Kuzmov <me@vkuzmov.com>
 			 */
 			init: function() {
-				switch(this.hostname) {
-					case 'nemesis-new-site.dev':
-						this.coreUrlTemplate = '/docs'+this.coreUrlTemplate;
-						this.facadeUrlTemplate = '/docs'+this.facadeUrlTemplate;
-						break;
-					case 'vkuzmov.com':
-						this.coreUrlTemplate = '/nemesis-new-site/current/docs'+this.coreUrlTemplate;
-						this.facadeUrlTemplate = '/nemesis-new-site/current/docs'+this.facadeUrlTemplate;
-						break;
+				if ( ! $('.rest-tester').length) {
+					return;
 				}
 
 				$('.rest-tester [name="client_type"]').on('change', function(e) {
@@ -45,10 +37,15 @@ $(function(){
 				});
 
 				$('.rest-tester [data-api-trigger="true"]').on('change', function() {
-					nemesis.restTester.loadContent($(this).closest('.tab-pane'));
+					var endpoint = nemesis.restTester.getEndpoint($(this).closest('.tab-pane'));
+					// console.log(endpoint);
+					nemesis.restTester.loadContent(endpoint);
 				});
 
-				$('.rest-tester [data-api-object="method"]').chainedTo('.rest-tester [data-api-object="class"]');
+				$.each($('.rest-tester .tab-pane'), function(i, obj) {
+					var parent = $(obj);
+					$('[data-api-object="method"]', parent).chainedTo($('[data-api-object="class"]', parent));
+				});
 
 				// Remove response
 				$('.rest-tester').on('click', '.response .remove', function(e) {
@@ -56,27 +53,29 @@ $(function(){
 				});
 
 				// Update token
-				$('#nemesis_token').on('blur', function() {
+				$('.rest-tester #nemesis_token').on('blur', function() {
 					$.each($('.rest-tester .response'), function(i, obj) {
 						nemesis.restTester.updateToken($(obj));
 					});
+				});
+
+				// Auth Request
+				$('.rest-tester .js-auth-request').on('click', function(e) {
+					e.preventDefault();
+					var endpoint = nemesis.restTester.authUrlTemplate
+						.replace('__client_type__', nemesis.restTester.clientType);
+					nemesis.restTester.loadContent(endpoint);
 				});
 			},
 
 			/**
 			 * Load external content
 			 *
-			 * @param {object} parent
+			 * @param {string} endpoint
 			 * @return {void}
 			 * @author Vladimir Kuzmov <me@vkuzmov.com>
 			 */
-			loadContent: function(parent) {
-				var endpoint = this.getEndpoint(parent);
-
-				if (endpoint === false) {
-					return;
-				}
-
+			loadContent: function(endpoint) {
 				$.ajax({
 					url: endpoint,
 					type: 'GET',
@@ -85,7 +84,7 @@ $(function(){
 						var codeSnippet = $('#preamble .listingblock', $(response));
 						nemesis.restTester.updateToken(codeSnippet);
 
-						$('.tab-pane.active .response-wrapper').append(
+						$('.rest-tester .tab-pane.active .response-wrapper').append(
 							$('<div>')
 								.attr('class', 'response')
 								.html(codeSnippet)
@@ -114,10 +113,11 @@ $(function(){
 					return false;
 				}
 
-				return this[activeTab+'UrlTemplate']
-					.replace('__client_type__', this.clientType)
+				return this.urlTemplate
+					.replace('__api_object_type__', activeTab)
 					.replace('__'+first.data('apiObject')+'__', first.val())
-					.replace('__'+second.data('apiObject')+'__', second.val());
+					.replace('__'+second.data('apiObject')+'__', second.val())
+					.replace('__client_type__', this.clientType);
 			},
 
 			/**
@@ -128,18 +128,18 @@ $(function(){
 			 * @author Vladimir Kuzmov <me@vkuzmov.com>
 			 */
 			updateToken: function(content) {
-				var tokenValue = $('#nemesis_token').val(),
+				var tokenValue = $('.rest-tester #nemesis_token').val(),
 					code = $('code', content).text();
 
 				switch(this.clientType) {
 					case 'curl':
-						code = code.replace(/-H 'X-Nemesis-Token:[^']+'/gi, "-H 'X-Nemesis-Token: "+tokenValue+"'");
+						code = code.replace(/-H 'X-Nemesis-Token:[^']*'/gi, "-H 'X-Nemesis-Token: "+tokenValue+"'");
 						break;
 					case 'httpie':
-						code = code.replace(/'X-Nemesis-Token:[^']+'/gi, "'X-Nemesis-Token: "+tokenValue+"'");
+						code = code.replace(/'X-Nemesis-Token:[^']*'/gi, "'X-Nemesis-Token: "+tokenValue+"'");
 						break;
 					case 'http':
-						code = code.replace(/X-Nemesis-Token:[^\n]+/gi, 'X-Nemesis-Token: '+tokenValue);
+						code = code.replace(/X-Nemesis-Token:[^\n]*/gi, 'X-Nemesis-Token: '+tokenValue);
 						break;
 					default:
 						return;
@@ -183,5 +183,41 @@ $(function(){
 
 		nemesis.scrollToElement(elWrapped, header_height);
 	}
+
+	// Show search form in header
+	$('.search-btn').on('click', function(e) {
+		e.preventDefault();
+		$(this).closest('.nav-wrapper').addClass('show-search');
+		$('.search-form input[type="search"]').focus();
+	});
+
+	// Hide search form in header
+	$('.search-form input[type="search"]').on('focusout', function(e) {
+		e.preventDefault();
+		$(this).closest('.nav-wrapper').removeClass('show-search');
+	});
+
+	// Searchable
+	$('.js-searchable').on('keyup', function() {
+		var self = $(this),
+			term = $.trim(self.val().toLowerCase()),
+			container = $(self.data('container'));
+
+		if (term) {
+			$('[data-searchable]', container).addClass('hidden');
+			var visibleItems = $('[data-searchable*="' + term + '"]', container);
+			visibleItems.removeClass('hidden');
+
+			if ( ! visibleItems.length) {
+				$('.js-searchable-no-result', container).removeClass('hidden');
+			}
+			else {
+				$('.js-searchable-no-result', container).addClass('hidden');
+			}
+		}
+		else {
+			$('[data-searchable]', container).removeClass('hidden');
+		}
+	});
 
 });

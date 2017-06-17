@@ -606,7 +606,16 @@
 						<ul class="nav nav-pills">
 							<!--li class="hide-on-mobile"><a href="#">User Guides</a></li-->
 							<li class="active hide-on-mobile"><a href="#">Developer Guides</a></li>
-							<li><a href="#" class="search-btn"></a></li>
+                            <li>
+                                <a href="#" class="search-btn"></a>
+                                <div class="search-form">
+                                    <form action="http://nemesis.io/search" method="POST">
+                                        <div class="form-group">
+                                            <input type="search" class="form-control" name="q" placeholder="Search Docs..." value="">
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
 						</ul>
 					</nav>
 				</div>
