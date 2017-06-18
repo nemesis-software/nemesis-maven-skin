@@ -917,6 +917,61 @@ footer .social ul li a:hover {
     overflow: hidden;
 }
 
+.table-grid {
+    float: left;
+    width: 100%;
+}
+.table-grid .item {
+    float: left;
+    width: 33.3333%;
+    padding: 15px;
+    text-align: center;
+    border-collapse: collapse;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+}
+.table-grid .item:nth-child(3n+1) {
+    border-left: 1px solid #dedede;
+}
+.table-grid .item:nth-child(n+1),
+.table-grid .item:nth-child(n+2),
+.table-grid .item:nth-child(n+3) {
+    background-color: white;
+}
+.table-grid .item:nth-child(6n+4),
+.table-grid .item:nth-child(6n+5),
+.table-grid .item:nth-child(6n+6) {
+    background-color: #f8f8f7;
+}
+.table-grid .item:nth-child(-n + 3) {
+    border-top: 1px solid #dedede;
+}
+/* one item */
+.table-grid .item:first-child:nth-last-child(1) {
+    width: 100%;
+}
+/* two items */
+.table-grid .item:first-child:nth-last-child(2),
+.table-grid .item:first-child:nth-last-child(2) ~ .item {
+    width: 50%;
+}
+.table-grid .item a {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+.table-grid .item img {
+    display: inline-block;
+    height: 65px;
+    max-width: 100%;
+}
+.table-grid .item span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @media (max-width: 1150px) {
     .container,
     header .container {
