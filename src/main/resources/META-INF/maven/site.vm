@@ -591,12 +591,12 @@
 		<header>
 			<div class="container-fluid">
 				<div class="sidenav-trigger">
-					<a href="#"><img src="./img/icon-navbar-open.png" /></a>
+					<a href="#"><img src="/current-snapshot/img/icon-navbar-open.png" /></a>
 				</div>
 
 				<div class="logo">
 					<a href="http://docs.nemesis.io/">
-						<img src="./img/logo.svg" />
+						<img src="/current-snapshot/img/logo.svg" />
 						<span class="title hide-on-mobile">Nemesis Documentation</span>
 					</a>
 				</div>
