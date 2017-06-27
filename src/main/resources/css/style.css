@@ -100,10 +100,14 @@ h6,
 .large-12.columns .sect1 h4 a.anchor:before,
 .large-12.columns .sect1 h5 a.anchor:before,
 .large-12.columns .sect1 h6 a.anchor:before {
-    font: bold 22px/normal 'Roboto Slab', sans-serif;
+    /*font: bold 22px/normal 'Roboto Slab', sans-serif;*/
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: bold;
+    line-height: normal;
     letter-spacing: 0;
     color: #434343;
 }
+
 .large-12.columns .sect1 {
     width: 100%;
     overflow-x: auto;
@@ -694,7 +698,7 @@ footer .social ul li a:hover {
 .large-12.columns .sect1 td,
 .large-12.columns .sect1 b,
 .large-12.columns .sect1 div,
-.large-12.columns .sect1 a {
+.large-12.columns .sect1 a:not(.anchor) {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 400 !important;
     font-size: 16px !important;
@@ -716,7 +720,7 @@ footer .social ul li a:hover {
 .large-12.columns .sect1 h6 a.anchor:before {
     padding-top: 0;
     position: relative;
-    top: -3px;
+    /*top: -3px;*/
     left: -5px;
 }
 .large-12.columns .ulist ul {
