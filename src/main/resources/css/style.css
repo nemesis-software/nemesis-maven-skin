@@ -200,7 +200,7 @@ header .sidenav-trigger a {
 }
 header .logo {
     float: left;
-    width: 355px;
+    width: 375px;
     overflow: hidden;
     margin-top: 35px;
     -webkit-transition: .25s margin ease;
@@ -225,7 +225,7 @@ header .logo .title {
 header .nav-wrapper {
     float: right;
     height: 130px;
-    width: calc(100% - 445px);
+    width: calc(100% - 465px);
     overflow: hidden;
     background-color: #333;
     -webkit-transition: .25s width ease;
