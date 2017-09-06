@@ -262,10 +262,10 @@
                     <a href="#">$menu.name $img</a>
                 #end
             #else
-                <li class="dropdown open">
-                    <a href="#" data-target="#collapse-$velocityCount" data-toggle="collapse" aria-expanded="false">$menu.name</a>
+                <li class="dropdown">
+                    <a class="collapsed" href="#" data-target="#collapse-$velocityCount" data-toggle="collapse" aria-expanded="false">$menu.name</a>
                     #if ( $menu.items && $menu.items.size() > 0 )
-                        <ul class="collapse in" id="collapse-$velocityCount">
+                        <ul class="collapse" id="collapse-$velocityCount">
                             #foreach( $item in $menu.items )
                                 #menuItem( $item )
                             #end
