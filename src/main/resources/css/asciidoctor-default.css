@@ -791,8 +791,7 @@ select {
     }
 }
 .paragraph>p {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: 0.5em 0 0 0;
 }
 p.lead,
 .paragraph.lead>p,
@@ -3138,7 +3137,7 @@ ul.inline>li>* {
 }
 ol.arabic {
     list-style-type: decimal;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 ol.decimal {
     list-style-type: decimal-leading-zero
@@ -3207,7 +3206,7 @@ td.hdlist2 {
     margin: 0.25em 0 1.25em 0.625em
 }
 .imageblock>.title {
-    margin-bottom: 0
+    margin: 5px 0 0 0;
 }
 .imageblock.thumb,
 .imageblock.th {

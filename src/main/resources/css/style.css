@@ -79,43 +79,31 @@ html {
     height: 100%;
 }
 body {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 30px;
     color: #535353;
     background-color: #eff6f9;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.large-12.columns .sect1 h2 strong,
-.large-12.columns .sect1 h3 strong,
-.large-12.columns .sect1 h4 strong,
-.large-12.columns .sect1 h5 strong,
-.large-12.columns .sect1 h6 strong,
-.large-12.columns .sect1 h2 a.anchor:before,
-.large-12.columns .sect1 h3 a.anchor:before,
-.large-12.columns .sect1 h4 a.anchor:before,
-.large-12.columns .sect1 h5 a.anchor:before,
-.large-12.columns .sect1 h6 a.anchor:before {
-    /*font: bold 22px/normal 'Roboto Slab', sans-serif;*/
+
+
+h1, h1 strong { font-size: 50px; }
+h2, h2 strong { font-size: 40px; }
+h3, h3 strong { font-size: 30px; }
+h4, h4 strong { font-size: 22px; }
+h5, h5 strong { font-size: 20px; }
+h6, h6 strong { font-size: 18px; }
+
+/*It's necessary to unify the font-weight property for 'plain' and 'strong' styles because of their sometimes unconsistent usage some pages appear with random-like formatings. */
+h1, h2, h3, h4, h5, h6, 
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
     font-family: 'Roboto Slab', sans-serif;
-    font-weight: bold;
+    font-weight: normal;
     line-height: normal;
     letter-spacing: 0;
     color: #434343;
 }
-
-.large-12.columns .sect1 {
-    width: 100%;
-    overflow-x: auto;
-}
-
-h1 {
-    font-size: 50px;
-    line-height: 54px;
+h1,  h1 strong {
+    font-weight: bold;
 }
 input {
     border: none !important;
@@ -283,7 +271,6 @@ header .nav-wrapper {
     height: 6px;
     background-color: #47d6ff;
 }
-
 .main-nav li:last-child {
     min-width: 47px;
 }
@@ -303,7 +290,6 @@ header .nav-wrapper {
 .main-nav .search-btn:hover::before {
     display: none;
 }
-
 .nav-wrapper .search-form {
     width: 0;
     height: 40px;
@@ -375,7 +361,7 @@ header .nav-wrapper {
 .sidenav ul strong {
     position: relative;
     z-index: 2;
-    padding: 0 0 0 60px;
+    padding: 0 0 0 10px;
     float: left;
     width: 100%;
 }
@@ -390,21 +376,9 @@ header .nav-wrapper {
 .sidenav .nav > ul > li:not(.open):hover {
     background-color: #cbd1d3;
 }
-/*.sidenav .nav > ul > li.dropdown::after {
-    position: absolute;
-    z-index: 2;
-    right: 0;
-    top: 16px;
-    right: 20px;
-    font-size: 1em;
-
-    font-weight: 400;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
+.sidenav .nav > ul > li.dropdown > a {
+    padding: 0 0 0 40px;
 }
-.sidenav .nav > ul > li.dropdown.open::after {
-    content: "\f0d8";
-}*/
 .sidenav .nav > ul > li > a:after
 {
     position: absolute;
@@ -435,7 +409,7 @@ header .nav-wrapper {
 .sidenav .nav > ul > li ul a,
 .sidenav .nav > ul > li ul strong {
     color: #333333;
-    font: 18px/41px 'Roboto', sans-serif;
+    font: 20px/41px 'Roboto', sans-serif;
     font-weight: 500;
 }
 .sidenav .nav > ul > li ul a:hover,
@@ -527,7 +501,7 @@ footer .social ul li a:hover {
     hyphens: auto;
     margin-top: 30px;
     color: #434343 !important;
-    font:  24px/38px 'Roboto script=all rev=1', sans-serif !important;
+    font:  22px/38px 'Roboto script=all rev=1', sans-serif !important;
     font-weight: 300 !important;
 }
 .features-grid {
@@ -554,7 +528,7 @@ footer .social ul li a:hover {
     float: left;
     width: 100%;
     height: 170px;
-    padding: 40px 20px 0;
+    padding: 20px;
     overflow: hidden;
     background-color: white;
 }
@@ -678,20 +652,20 @@ footer .social ul li a:hover {
 }
 
 #preamble {
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 #preamble p {
     font-family: 'Roboto script=all rev=1', sans-serif !important;
     font-weight: 300 !important;
     font-style: normal !important;
     color: #434343 !important;
-    font-size: 24px !important;
-    line-height: 38px !important;
+    font-size: 22px !important;
+    line-height: 33px !important;
 }
 #preamble .home p {
     color: #535353 !important;
-    font-size: 16px !important;
-    line-height: 30px !important;
+    font-size: 18px !important;
+    line-height: 21px !important;
 }
 
 .large-12.columns {
@@ -699,15 +673,17 @@ footer .social ul li a:hover {
     float: left;
     width: 100%;
 }
-.large-12.columns h1 {
-    margin-bottom: 20px;
-}
+.large-12.columns h1,
 .large-12.columns h2,
 .large-12.columns h3,
 .large-12.columns h4,
 .large-12.columns h5,
 .large-12.columns h6 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+.large-12.columns .sect1 {
+    width: 100%;
+    overflow-x: auto;
 }
 .large-12.columns .sect1 p,
 .large-12.columns .sect1 span,
@@ -717,10 +693,26 @@ footer .social ul li a:hover {
 .large-12.columns .sect1 a:not(.anchor) {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 400 !important;
-    font-size: 16px !important;
-    line-height: 30px !important;
+    font-size: 20px !important;
+    line-height: 33px !important;
 }
-
+.large-12.columns .sect1 h2 strong,
+.large-12.columns .sect1 h3 strong,
+.large-12.columns .sect1 h4 strong,
+.large-12.columns .sect1 h5 strong,
+.large-12.columns .sect1 h6 strong,
+.large-12.columns .sect1 h2 a.anchor:before,
+.large-12.columns .sect1 h3 a.anchor:before,
+.large-12.columns .sect1 h4 a.anchor:before,
+.large-12.columns .sect1 h5 a.anchor:before,
+.large-12.columns .sect1 h6 a.anchor:before {
+    /*font: bold 22px/normal 'Roboto Slab', sans-serif;*/
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: normal; 
+    line-height: normal;
+    letter-spacing: 0;
+    color: #434343;
+}
 .large-12.columns .sect1 h2 a.anchor
 .large-12.columns .sect1 h3 a.anchor
 .large-12.columns .sect1 h4 a.anchor
@@ -746,26 +738,21 @@ footer .social ul li a:hover {
 .large-12.columns .ulist ul > li > p {
     display: inline;
 }
-
 .large-12.columns .sect1 + .sect1 {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .large-12.columns .sect2 {
-    margin-top: 40px;
+    margin-top: 30px;
 }
-.large-12.columns .listingblock,
 .large-12.columns .imageblock {
-    margin: 30px 0;
+    margin: 30px 0 0 0;
+}
+.large-12.columns .imageblock + * {
+    margin-top: 30px;
 }
 .large-12.columns .listingblock .title,
 .large-12.columns .imageblock .title {
     word-break: break-all;
-}
-.large-12.columns .imageblock {
-    margin: 80px 0 0 0;
-}
-.large-12.columns .imageblock + * {
-    margin-top: 80px;
 }
 .large-12.columns code {
     max-width: 100%;
