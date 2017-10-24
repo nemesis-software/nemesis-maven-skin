@@ -321,6 +321,8 @@ header .nav-wrapper {
     }
 }
 
+
+
 /**
  * Side navigation
  */
@@ -1072,21 +1074,6 @@ footer .social ul li a:hover {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.admonitionblock {
+    width:90%;
+}
