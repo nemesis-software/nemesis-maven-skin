@@ -43,7 +43,7 @@ header, nav, section, article, aside, footer, hgroup, time {
     outline: none;
     font-family: 'Roboto script=all rev=1', sans-serif;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -401,10 +401,10 @@ header .nav-wrapper {
     margin: 0;
 }
 .sidenav .nav > ul > li ul > li:first-child {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 .sidenav .nav > ul > li ul > li:last-child {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 .sidenav .nav > ul > li ul a,
 .sidenav .nav > ul > li ul strong {
@@ -495,14 +495,6 @@ footer .social ul li a:hover {
     color: #434343;
     font-size: 50px;
     line-height: 50px;
-}
-#preamble .home .page-title p {
-    width: 100%;
-    hyphens: auto;
-    margin-top: 30px;
-    color: #434343 !important;
-    font:  22px/38px 'Roboto script=all rev=1', sans-serif !important;
-    font-weight: 300 !important;
 }
 .features-grid {
     float: left;
@@ -618,12 +610,6 @@ footer .social ul li a:hover {
     padding: 50px;
     background-color: white;
 }
-#preamble .home .guides-to-follow .developer-guides .tag {
-    text-transform: uppercase;
-    color: #ff7247 !important;
-    font: bold 16px/normal 'Roboto', sans-serif !important;
-    margin-bottom: 10px;
-}
 .guides-to-follow .developer-guides h3 {
     margin-bottom: 25px;
 }
@@ -655,11 +641,11 @@ footer .social ul li a:hover {
     margin-bottom: 50px;
 }
 #preamble p {
-    font-family: 'Roboto script=all rev=1', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
     font-weight: 300 !important;
     font-style: normal !important;
     color: #434343 !important;
-    font-size: 22px !important;
+    font-size: 20px !important;
     line-height: 33px !important;
 }
 #preamble .home p {
@@ -667,6 +653,23 @@ footer .social ul li a:hover {
     font-size: 18px !important;
     line-height: 21px !important;
 }
+#preamble  a {
+   font-family: 'Roboto', sans-serif !important;	
+}
+#preamble .home .guides-to-follow .developer-guides .tag {
+    text-transform: uppercase;
+    color: #ff7247 !important;
+    font: bold 16px/normal 'Roboto', sans-serif !important;
+    margin-bottom: 10px;
+}
+#preamble .home .page-title p {
+    width: 100%;
+    hyphens: auto;
+    margin-top: 30px;
+    color: #434343 !important;
+    font:  20px/38px 'Roboto', sans-serif !important;
+    font-weight: 300 !important;
+}	
 
 .large-12.columns {
     padding: 0;
@@ -687,13 +690,18 @@ footer .social ul li a:hover {
 }
 .large-12.columns .sect1 p,
 .large-12.columns .sect1 span,
-.large-12.columns .sect1 td,
 .large-12.columns .sect1 b,
 .large-12.columns .sect1 div,
 .large-12.columns .sect1 a:not(.anchor) {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 400 !important;
     font-size: 20px !important;
+    line-height: 33px !important;
+}
+.large-12.columns .sect1 td p {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
     line-height: 33px !important;
 }
 .large-12.columns .sect1 h2 strong,

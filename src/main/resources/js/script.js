@@ -153,6 +153,12 @@ $(function(){
 
 	nemesis.restTester.init();
 
+    // Expand sidenav submenu containing selected item
+	/*if ($('#collapsing-menu-item-selected').length) {
+		$('#collapsing-menu-item-selected').closest('.dropdown').toggleClass('open');
+		$('#collapsing-menu-item-selected').closest('.collapse').collapse('show');
+	}*/
+
 	// Show/Hide sidenav
 	$('.sidenav-trigger').on('click', function(e) {
 		e.preventDefault();

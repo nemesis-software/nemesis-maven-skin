@@ -172,7 +172,13 @@
             #set ( $collapse = "open" )
         #end
     #end
-<li class="$collapse $currentItemHref $item.collapse ">
+##
+    #if ( $alignedFileName == $currentItemHref )
+<li id="collapsing-menu-item-selected">
+    #else
+<li id="collapsing-menu-item">
+    #end
+##
     #if ( $item.img )
         #if ( $item.position == "left" )
             #if ( $alignedFileName == $currentItemHref )
@@ -195,7 +201,7 @@
         #end
     #end
     #if ( $item && $item.items && $item.items.size() > 0 )
-        #if ( $collapse == "expanded" )
+        #if ( $collapse == "open" )
             <ul>
                 #foreach( $subitem in $item.items )
                     #menuItem( $subitem )
@@ -204,6 +210,17 @@
         #end
     #end
 </li>
+#end
+##
+#macro ( checkSelected $items )
+    #foreach ( $item in $items )
+        #if ( $item.href == $alignedFileName )
+            "selected"
+            #break($foreach)
+        #elseif ( $item.items && $item.items.size() > 0 )
+            #checkSelected( $item.items )
+        #end
+    #end
 #end
 ##
 #macro ( mainMenu $menus )
@@ -262,10 +279,33 @@
                     <a href="#">$menu.name $img</a>
                 #end
             #else
-                <li class="dropdown">
-                    <a class="collapsed" href="#" data-target="#collapse-$velocityCount" data-toggle="collapse" aria-expanded="false">$menu.name</a>
+                #if ( $menu.name == "Nemesis")
+                    #set( $expanded = true )
+                #else
+                    #set ( $selected = "#checkSelected( $menu.items )" )
+                    #if ( $selected.contains( "selected" ) )
+                        #set ( $expanded = true )
+                    #else
+                        #set ( $expanded = false )
+                    #end
+                #end
+
+                #if( $expanded )
+                    #set( $dropdown = "dropdown open" )
+                    #set( $collapsed = "" )
+                    #set( $aria-expanded = "true")
+                    #set( $collapse = "collapse in" )
+                #else
+                    #set( $dropdown = "dropdown" )
+                    #set( $collapsed = "collapsed" )
+                    #set( $aria-expanded = "false")
+                    #set( $collapse = "collapse" )
+                #end
+
+                <li class="$dropdown">
+                    <a class="$collapsed" href="#" data-target="#collapse-$velocityCount" data-toggle="collapse" aria-expanded="$aria-expanded">$menu.name</a>
                     #if ( $menu.items && $menu.items.size() > 0 )
-                        <ul class="collapse" id="collapse-$velocityCount">
+                        <ul class="$collapse" id="collapse-$velocityCount">
                             #foreach( $item in $menu.items )
                                 #menuItem( $item )
                             #end
