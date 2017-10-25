@@ -79,7 +79,7 @@ html {
     height: 100%;
 }
 body {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 30px;
     color: #535353;
     background-color: #eff6f9;
@@ -89,7 +89,7 @@ body {
 h1, h1 strong { font-size: 50px; }
 h2, h2 strong { font-size: 40px; }
 h3, h3 strong { font-size: 30px; }
-h4, h4 strong { font-size: 22px; }
+h4, h4 strong { font-size: 23px; }
 h5, h5 strong { font-size: 20px; }
 h6, h6 strong { font-size: 18px; }
 
@@ -101,9 +101,20 @@ h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
     line-height: normal;
     letter-spacing: 0;
     color: #434343;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 h1,  h1 strong {
     font-weight: bold;
+}
+/*#toc + .sect1 h1, #toc + .sect1 h2, #toc + .sect1 h3, #toc + .sect1 h4, #toc + .sect1 h5, #toc + .sect1 h6, 
+#toc + .sect1 h1 strong, #toc + .sect1 h2 strong, #toc + .sect1 h3 strong, #toc + .sect1 h4 strong, #toc + .sect1 h5 strong, #toc + .sect1 h6 strong {
+    margin-top: 0px;
+}*/
+
+.title {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
 }
 input {
     border: none !important;
@@ -153,6 +164,7 @@ input::-webkit-search-cancel-button {
 .no-margin {
     margin: 0 !important;
 }
+
 
 /**
  * Header
@@ -425,7 +437,7 @@ header .nav-wrapper {
 #main-content {
     position: relative;
     min-height: calc(100vh - 457px);
-    margin: 200px 0 105px 0;
+    margin: 160px 0 105px 0;
 }
 #main-content,
 footer {
@@ -480,7 +492,6 @@ footer .social ul li a:hover {
 .page-title {
     float: left;
     width: 64.298245614%;
-    margin-top: 70px;
     margin-bottom: 110px;
 }
 @media (max-width: 1200px) {
@@ -528,6 +539,7 @@ footer .social ul li a:hover {
 }
 .features-grid .item .content h2 {
     margin-bottom: 20px;
+    margin-top: 0;	 	
 }
 .features-grid .item .content h2 a {
     font: bold 22px/normal 'Roboto Slab', sans-serif;
@@ -600,7 +612,7 @@ footer .social ul li a:hover {
     color: #333333;
     line-height: 42px;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 .guides-to-follow ul li a:hover {
@@ -627,7 +639,7 @@ footer .social ul li a:hover {
 .breadcrumb li,
 .breadcrumb a {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: #333333;
     text-decoration: none !important;
@@ -640,7 +652,7 @@ footer .social ul li a:hover {
 }
 
 #preamble {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 #preamble p {
     font-family: 'Roboto', sans-serif !important;
@@ -749,16 +761,16 @@ footer .social ul li a:hover {
     display: inline;
 }
 .large-12.columns .sect1 + .sect1 {
-    margin-top: 30px;
+    margin-top: 0;
 }
 .large-12.columns .sect2 {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .large-12.columns .imageblock {
-    margin: 30px 0 0 0;
+    margin: 20px 0 0 0;
 }
 .large-12.columns .imageblock + * {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .large-12.columns .listingblock .title,
 .large-12.columns .imageblock .title {
@@ -779,10 +791,11 @@ footer .social ul li a:hover {
     position: relative;
     float: right;
     padding: 0 0 0 80px;
-    margin: 0 0 30px 0;
+    margin: 0 0 20px 0;
     border: none;
     border-radius: 0;
     background-color: transparent;
+    font-size: 16px;	
 }
 #toc::before {
     content: '';
@@ -1076,4 +1089,14 @@ footer .social ul li a:hover {
 
 .admonitionblock {
     width:90%;
+    	
 }
+ 
+table.frame-all {
+    border-width: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.ulist .ulist {
+   margin-bottom: 0 !important;
