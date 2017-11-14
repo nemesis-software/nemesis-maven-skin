@@ -494,6 +494,24 @@ footer .social ul li a:hover {
     width: 64.298245614%;
     margin-bottom: 110px;
 }
+.startnemesisio {
+    color: #ffffff;
+    background-color: #47d6ff;
+    padding: 11px 19px;
+    font-size: 17.5px;
+    border-radius: 15px;
+    line-height: 20px;
+	float: right;
+	margin-top: 50px;
+}
+.home .page-title{
+	width: fit-content;
+	margin-bottom: 30px;
+}
+a.start-nemesis-io{
+	text-decoration: none !important;
+	color: #FFF;
+}
 @media (max-width: 1200px) {
     .open-sidenav .page-title {
         width: 100%;
