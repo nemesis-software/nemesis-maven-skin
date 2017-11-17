@@ -651,7 +651,7 @@
                             <li>
                                 <a href="#" class="search-btn"></a>
                                 <div class="search-form">
-                                    <form action="http://nemesis.io/search" method="GET">
+                                    <form action="http://nemesis.io/search/cms" method="GET">
                                         <div class="form-group">
                                             <input type="search" class="form-control" name="q" placeholder="Search Docs..." value="">
                                         </div>
