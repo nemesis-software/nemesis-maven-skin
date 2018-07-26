@@ -288,7 +288,7 @@
                     #if ( $selected.contains( "selected" ) )
                         #set ( $expanded = true )
                     #else
-                        #set ( $expanded = false )
+                        #set ( $expanded = true )
                     #end
                 #end
 
