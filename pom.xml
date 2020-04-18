@@ -10,10 +10,11 @@
   ~ Information and shall use it only in accordance with the terms of the
   ~ license agreement you entered into with nemesis.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.nemesis.tools</groupId>
+    <groupId>io.nemesis.tools</groupId>
     <artifactId>nemesis-maven-skin</artifactId>
     <version>1.6.0.BUILD-SNAPSHOT</version>
 
@@ -48,7 +49,7 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
-                    <goals />
+                    <goals/>
                 </configuration>
             </plugin>
         </plugins>
